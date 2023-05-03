@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
             GameObject newFire  = Instantiate(FirePrefab, transform.position, transform.rotation);
             //newFire.GetComponent<Rigidbody>().AddRelativeForce(Vector3 2); 
         }
