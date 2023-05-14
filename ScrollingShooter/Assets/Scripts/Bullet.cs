@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private float velocidad;
+
+    public GameObject Enemy;
+
+    public float Damage; 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-       
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.Translate(Vector2.up * velocidad * Time.deltaTime);
+
         Destroy(gameObject,0.5f);
     }
 
@@ -25,9 +34,12 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Armor");
             Destroy(gameObject);
+        }
 
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
         }
     }
 }

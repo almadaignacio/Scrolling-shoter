@@ -19,19 +19,10 @@ public class Weapon : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Shoot");
 
-            GameObject newFire  = Instantiate(FirePrefab, transform.position, transform.rotation);
-
-            Rigidbody rb = newFire.GetComponent<Rigidbody>();
-
-            rb.AddForce(Vector2.right * FireSpeed, ForceMode.Impulse);
-
-            //newFire.GetComponent<Rigidbody>().AddRelativeForce(Vector3 2); 
+            GameObject newFire  = Instantiate(FirePrefab, SpawnPosition.position, SpawnPosition.rotation);
         }
     }
-
-    
 }
