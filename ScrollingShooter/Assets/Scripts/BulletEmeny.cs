@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class BulletEmeny : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class BulletEmeny : MonoBehaviour
     private Vector2 target;
 
     public Player player;
+
+    public GameObject particleEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,7 @@ public class BulletEmeny : MonoBehaviour
         {
             player.HP--;
             //Debug.Log("HP player: " + player.HP);
+            Instantiate(particleEnemy, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

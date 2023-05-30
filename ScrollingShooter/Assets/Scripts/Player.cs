@@ -59,6 +59,17 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+
+        if (other.gameObject.CompareTag("DoubleShoot"))
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                HP++;
+            }
+
+            Destroy(other.gameObject);
+
+        }
     }
 
 }

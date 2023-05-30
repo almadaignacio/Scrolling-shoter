@@ -8,9 +8,9 @@ public class Bullet : MonoBehaviour
 
     public GameObject Enemy;
 
-    public float Damage; 
+    public float Damage;
 
-
+    public GameObject particle;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,10 @@ public class Bullet : MonoBehaviour
 
         if(other.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(particle, transform.position, transform.rotation);
             Destroy(gameObject);
+           // Destroy(particle, 3);
+
         }
     }
 }

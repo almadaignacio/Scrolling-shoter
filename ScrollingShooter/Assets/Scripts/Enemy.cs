@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject Explotion1;
 
+    public AudioSource beamEnemy;
+    public AudioSource explotionSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
         if (HP <= 0 && Boss == true)
         {
             Destroy(gameObject);
+            Instantiate(Explotion1, transform.position, transform.rotation);
+            explotionSound.Play();
             Explotion1.SetActive(true);
             
             TimeStart += Time.deltaTime;
@@ -48,12 +52,15 @@ public class Enemy : MonoBehaviour
         {
             gameObject.SetActive(false);
             Explotion1.SetActive(true);
+            explotionSound.Play();
+
 
         }
 
         if (TimetbwShots <= 0)
         {
              Instantiate(FireEnemy, transform.position, Quaternion.identity);
+            beamEnemy.Play();
             TimetbwShots = startTimeBtwShots;
         }
         else

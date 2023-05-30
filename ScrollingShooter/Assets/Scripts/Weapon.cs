@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public float FireSpeed;
     public GameObject FirePrefab;
     public Transform SpawnPosition;
+    public AudioSource Beam;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Weapon : MonoBehaviour
         {
 
             GameObject newFire  = Instantiate(FirePrefab, SpawnPosition.position, SpawnPosition.rotation);
+            Beam.Play();
         }
     }
 }

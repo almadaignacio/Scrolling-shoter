@@ -4924,7 +4924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c74bf777874964ab2ea275055c30ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 10
   Damage: 1
   speed: 50
   player: {fileID: 0}
+  particleEnemy: {fileID: 7801242939102278616, guid: 3fd83de13eccdbf40872a54bc6deb1d7, type: 3}
